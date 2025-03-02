@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Meiryo', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .free-banner {
+      background-color: #d9534f;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      background: linear-gradient(135deg, #0071bc 0%, #29abe2 100%);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+      padding-bottom: 10px;
+    }
+    
+    .header p {
+      font-size: 20px;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .company-info {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    
+    .content-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      color: #0071bc;
+      border-bottom: 2px solid #0071bc;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .step {
+      flex: 1 1 250px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-top: 5px solid #0071bc;
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      background-color: #0071bc;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+    
+    .step h3 {
+      margin-top: 10px;
+      color: #0071bc;
+    }
+    
+    .target-groups {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    
+    .target-group {
+      flex: 1 1 200px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px;
+      border-left: 4px solid #0071bc;
+    }
+    
+    .target-group h4 {
+      margin-top: 0;
+      color: #0071bc;
+    }
+    
+    .highlight {
+      background-color: #e3f2fd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #0071bc;
+    }
+    
+    .highlight h3 {
+      margin-top: 0;
+      color: #0071bc;
+    }
+    
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .topic {
+      flex: 0 0 auto;
+      background-color: #0071bc;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    
+    .schedule {
+      margin: 20px 0;
+    }
+    
+    .schedule-item {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    
+    .schedule-date {
+      flex: 0 0 200px;
+      font-weight: bold;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+    }
+    
+    .contact {
+      background-color: #e3f2fd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .contact h3 {
+      margin-top: 0;
+      color: #0071bc;
+    }
+    
+    .apply-button {
+      margin-top: 20px;
+    }
+    
+    .apply-button a {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .apply-button a:hover {
+      background-color: #218838;
+    }
+    
+    .hybrid-note {
+      background-color: #ebf7ed;
+      border-left: 4px solid #28a745;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .accent {
+      color: #d9534f;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ITパスポート実践ワークショップ</h1>
+      <p>～未経験からはじめるIT資格取得サポート～</p>
+      <div class="free-banner">参加費無料</div>
+      <div class="company-info">CRESS INFO株式会社</div>
+    </div>
+    
+    <div class="content-box">
+      <h2>セミナーの概要</h2>
+      <p>ITパスポート取得を支援し、IT業界への就職につながるスキルを身につけるワークショップです。</p>
+      
+      <div class="highlight">
+        <h3>ここがポイント！</h3>
+        <ul>
+          <li><span class="accent">90分×5回で苦手分野を克服！</span>ITパスポート合格のコツを伝授</li>
+          <li><span class="accent">実務に直結する内容</span>で現場で役立つ知識を習得</li>
+          <li><span class="accent">プロのエンジニア</span>からフィードバックがもらえる貴重な機会</li>
+        </ul>
+      </div>
+      
+      <div class="hybrid-note">
+        <strong>📱 参加しやすい形式：</strong>対面とオンラインのハイブリッド形式で実施します。初回はオリエンテーションとして対面、2回目以降はオンラインでの受講となります。
+      </div>
+    </div>
+    
+    <div class="content-box">
+      <h2>セミナーの流れ</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>座学</h3>
+          <p>「ITパスポートの頻出分野をプロが解説」</p>
+          <p>実務経験豊富な講師がわかりやすく解説します。</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>実践ワーク</h3>
+          <p>「模擬試験をその場で解いて、フィードバック」</p>
+          <p>個別のアドバイスで苦手分野を克服できます。</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>IT資格×現場スキル</h3>
+          <p>「ITパスポートの知識が現場でどう役立つのか実例を紹介」</p>
+          <p>実際の業務での活用例がわかります。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-box">
+      <h2>こんな方におすすめ</h2>
+      <div class="target-groups">
+        <div class="target-group">
+          <h4>未経験学生</h4>
+          <p>IT業界に興味があるが、プログラミング未経験の学生</p>
+        </div>
+        
+        <div class="target-group">
+          <h4>資格取得希望者</h4>
+          <p>ITパスポートや基本情報技術者試験の取得を目指している学生</p>
+        </div>
+        
+        <div class="target-group">
+          <h4>キャリア形成希望者</h4>
+          <p>IT業界に興味はあるが、具体的なキャリアパスが見えていない学生</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-box">
+      <h2>取り扱う主要分野</h2>
+      <p>ITパスポートの出題範囲のうち、受験者が苦手とする分野かつ現場で役立つ内容を厳選しました。</p>
+      <div class="topics">
+        <div class="topic">ネットワーク</div>
+        <div class="topic">セキュリティ</div>
+        <div class="topic">データベース</div>
+        <div class="topic">プログラミング・アルゴリズム</div>
+        <div class="topic">ハードウェア</div>
+      </div>
+    </div>
+    
+    <div class="content-box">
+      <h2>実施スケジュール</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-date">2025年5月中～6月末</div>
+          <div>セミナー実施期間</div>
+        </div>
+      </div>
+      <p>※詳細な日程は決まり次第お知らせします。</p>
+    </div>
+    
+    <div class="contact">
+      <h3>お申し込み・お問い合わせ</h3>
+      <p>セミナーについての詳細は、下記までお問い合わせください。</p>
+      <p><strong>CRESS INFO株式会社 営業統括部</strong></p>
+      <p>Email: salesmanager@ml.cress-i.com（担当：ITセミナー担当）</p>
+      <div class="apply-button">
+        <a href="https://forms.cressinfo.co.jp/it-seminar-apply" target="_blank">お申し込みフォームはこちら</a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>© 2025 CRESS INFO株式会社 All Rights Reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
